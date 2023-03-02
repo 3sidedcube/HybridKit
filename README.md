@@ -2,6 +2,11 @@
 
 Bridging between UIKit and SwiftUI.
 
+## Usage
+
+* Create the `UIHostingController` using the static `hosted` method
+* The SwiftUI `View` which is passed into that can now be a `HostedView` to give access to the `UIHostingController` and `UINavigationController` via `@Environment` variables
+
 ## Environment Variables
 
 A SwiftUI `View` may conform to `HostedView` in order to interface with its containing `UIHostingController` and `UINavigationController`.
