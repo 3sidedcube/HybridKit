@@ -1,3 +1,3 @@
 # HybridKit
 
-A description of this package.
+Bridging between UIKit and SwiftUI.
