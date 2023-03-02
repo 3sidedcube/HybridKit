@@ -23,4 +23,3 @@ public extension EnvironmentValues {
         set { self[NavigationControllerKey.self] = newValue }
     }
 }
-
