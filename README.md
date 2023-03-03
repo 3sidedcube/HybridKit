@@ -16,7 +16,7 @@ optionally passing in a navigation controller
 let viewController: UIViewController = .hosted(SomeView(), in: navigationController)
 ```
 
-If `SomeView` conforms to `HostedView` it then has access to the containing `UIHostingController` and `UINavigationController` via `@Environment` variables.
+If `SomeView` conforms to `HostedView`, then it then has access to the containing `UIHostingController` and `UINavigationController` via `@Environment` variables.
 
 ## Environment Variables
 
