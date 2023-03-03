@@ -2,7 +2,7 @@
 
 Bridging between UIKit and SwiftUI.
 
-In summary, this package is nothing more than functionality that enables SwiftUI `View`s to interface with their UIKit container view controllers via environment variables. 
+In summary, this package is nothing more than functionality that enables SwiftUI `View` to interface with its UIKit container view controllers via environment variables. 
 The built-in `UIHostingController` does the real heavy lifting.  
 
 ## Usage
