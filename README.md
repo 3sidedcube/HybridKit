@@ -43,7 +43,7 @@ struct ExampleScreen: HostedView {
 }
 ```
 
-As a result of conforming to `HostedView` the SwiftUI `View` is able to do stuff like:
+As a result of conforming to `HostedView`, the SwiftUI `View` is able to do stuff like:
 
 ```swift
 push(PushedScreen()) // Push on navigation stack
@@ -62,4 +62,4 @@ When developing navigation flows, be conscious that the SwiftUI `View`s are inst
 
 ## Example
 
-There is an example iOS app showing SwiftUI views working alongside a UIKit app in the root package directory.
+There is an example iOS app showing SwiftUI views working alongside a UIKit app in the package directory.
