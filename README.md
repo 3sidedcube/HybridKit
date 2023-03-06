@@ -2,8 +2,8 @@
 
 Bridging between UIKit and SwiftUI.
 
-In summary, this package is nothing more than functionality that enables SwiftUI `View` to interface with its UIKit container view controllers via environment variables. 
-The built-in `UIHostingController` does the real heavy lifting.  
+This package is nothing more than functionality that enables a SwiftUI `View` to interface with its UIKit container view controllers via environment variables. 
+The built-in [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller) does the real heavy lifting.  
 
 ## Usage
 
@@ -26,6 +26,7 @@ If `SomeView` conforms to `HostedView`, then it then has access to the containin
 A SwiftUI `View` may conform to `HostedView` in order to interface with its containing `UIHostingController` and `UINavigationController`.
 These are passed as environment variables when the `UIHostingController` is instantiated.
 With a reference to these view controllers, the SwiftUI can push, present, and dismiss the containing view controller.
+`SomeView` doesn't have to be a `HostedView` to work. It's only needed when interfacing with UIKit.
 
 For example:
 
@@ -45,7 +46,9 @@ struct ExampleScreen: HostedView {
 As a result of conforming to `HostedView` the SwiftUI `View` is able to do stuff like:
 
 ```swift
-push(AnotherScreen()) // Push on navigation stack
+push(PushedScreen()) // Push on navigation stack
+present(PresentedScreen()) // Present modal
+dismiss() // Dismiss modal
 ```
 
 ## Caveats
