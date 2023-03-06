@@ -56,3 +56,7 @@ push(AnotherScreen()) // Push on navigation stack
 ## Architecture and Data Flow
 
 When developing navigation flows, be conscious that the SwiftUI `View`s are instantiated when the hosting `UIHostingController` is instantiated and pushed on the navigation stack. I.e. on a when-needed basis. This is a different way of thinking to pure SwiftUI where `NavigationLink` instantiates views all the way through the flow.
+
+## Example
+
+There is an example iOS app showing SwiftUI views working alongside a UIKit app in the root package directory.
