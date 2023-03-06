@@ -14,8 +14,12 @@
 		B83A72DF29B5DC7100FDE254 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72DE29B5DC7100FDE254 /* RootViewController.swift */; };
 		B83A72E229B5DE8900FDE254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72E129B5DE8900FDE254 /* ViewController.swift */; };
 		B83A72E429B5DF3A00FDE254 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72E329B5DF3A00FDE254 /* RootNavigationController.swift */; };
-		B83A72E629B5DF8100FDE254 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72E529B5DF8100FDE254 /* ScreenView.swift */; };
-		B83A72EB29B5E3C600FDE254 /* HybridKit in Frameworks */ = {isa = PBXBuildFile; productRef = B83A72EA29B5E3C600FDE254 /* HybridKit */; };
+		B83A72E629B5DF8100FDE254 /* PushedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72E529B5DF8100FDE254 /* PushedView.swift */; };
+		B83A72F029B5F1DD00FDE254 /* UIButton+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72EF29B5F1DD00FDE254 /* UIButton+Make.swift */; };
+		B83A72F229B5F1E400FDE254 /* UILabel+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72F129B5F1E400FDE254 /* UILabel+Make.swift */; };
+		B83A72F429B5F29600FDE254 /* UIStackView+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72F329B5F29600FDE254 /* UIStackView+Make.swift */; };
+		B83A72F629B5F48E00FDE254 /* PresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A72F529B5F48E00FDE254 /* PresentedView.swift */; };
+		B83A72FA29B5F7C200FDE254 /* HybridKit in Frameworks */ = {isa = PBXBuildFile; productRef = B83A72F929B5F7C200FDE254 /* HybridKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +32,12 @@
 		B83A72DE29B5DC7100FDE254 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B83A72E129B5DE8900FDE254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B83A72E329B5DF3A00FDE254 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
-		B83A72E529B5DF8100FDE254 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
-		B83A72E829B5E25600FDE254 /* HybridKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HybridKit; path = ..; sourceTree = "<group>"; };
+		B83A72E529B5DF8100FDE254 /* PushedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushedView.swift; sourceTree = "<group>"; };
+		B83A72EF29B5F1DD00FDE254 /* UIButton+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Make.swift"; sourceTree = "<group>"; };
+		B83A72F129B5F1E400FDE254 /* UILabel+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Make.swift"; sourceTree = "<group>"; };
+		B83A72F329B5F29600FDE254 /* UIStackView+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Make.swift"; sourceTree = "<group>"; };
+		B83A72F529B5F48E00FDE254 /* PresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedView.swift; sourceTree = "<group>"; };
+		B83A72F829B5F7BB00FDE254 /* HybridKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HybridKit; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83A72EB29B5E3C600FDE254 /* HybridKit in Frameworks */,
+				B83A72FA29B5F7C200FDE254 /* HybridKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +73,8 @@
 		B83A72C829B5DBB600FDE254 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				B83A72E029B5DE7300FDE254 /* Views */,
+				B83A72EE29B5F1D300FDE254 /* Extensions */,
+				B83A72E029B5DE7300FDE254 /* SwiftUIViews */,
 				B83A72DD29B5DC6500FDE254 /* ViewControllers */,
 				B83A72C929B5DBB600FDE254 /* AppDelegate.swift */,
 				B83A72CB29B5DBB600FDE254 /* SceneDelegate.swift */,
@@ -86,18 +95,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		B83A72E029B5DE7300FDE254 /* Views */ = {
+		B83A72E029B5DE7300FDE254 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
-				B83A72E529B5DF8100FDE254 /* ScreenView.swift */,
+				B83A72E529B5DF8100FDE254 /* PushedView.swift */,
+				B83A72F529B5F48E00FDE254 /* PresentedView.swift */,
 			);
-			path = Views;
+			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
 		B83A72E729B5E25600FDE254 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B83A72E829B5E25600FDE254 /* HybridKit */,
+				B83A72F829B5F7BB00FDE254 /* HybridKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -107,6 +117,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B83A72EE29B5F1D300FDE254 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B83A72EF29B5F1DD00FDE254 /* UIButton+Make.swift */,
+				B83A72F129B5F1E400FDE254 /* UILabel+Make.swift */,
+				B83A72F329B5F29600FDE254 /* UIStackView+Make.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +146,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				B83A72EA29B5E3C600FDE254 /* HybridKit */,
+				B83A72F929B5F7C200FDE254 /* HybridKit */,
 			);
 			productName = Example;
 			productReference = B83A72C629B5DBB600FDE254 /* Example.app */;
@@ -182,11 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83A72E629B5DF8100FDE254 /* ScreenView.swift in Sources */,
+				B83A72E629B5DF8100FDE254 /* PushedView.swift in Sources */,
+				B83A72F629B5F48E00FDE254 /* PresentedView.swift in Sources */,
 				B83A72CA29B5DBB600FDE254 /* AppDelegate.swift in Sources */,
 				B83A72DF29B5DC7100FDE254 /* RootViewController.swift in Sources */,
 				B83A72E229B5DE8900FDE254 /* ViewController.swift in Sources */,
+				B83A72F229B5F1E400FDE254 /* UILabel+Make.swift in Sources */,
 				B83A72E429B5DF3A00FDE254 /* RootNavigationController.swift in Sources */,
+				B83A72F429B5F29600FDE254 /* UIStackView+Make.swift in Sources */,
+				B83A72F029B5F1DD00FDE254 /* UIButton+Make.swift in Sources */,
 				B83A72CC29B5DBB600FDE254 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +425,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B83A72EA29B5E3C600FDE254 /* HybridKit */ = {
+		B83A72F929B5F7C200FDE254 /* HybridKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HybridKit;
 		};

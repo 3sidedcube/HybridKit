@@ -9,47 +9,33 @@ import UIKit
 
 class RootViewController: UIViewController {
 
-    private let vStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 0
-        return stackView
-    }()
+    private let vStackView: UIStackView = .make(spacing: 8)
 
-    private let label = {
-        let label = UILabel()
-        label.text = "\(RootViewController.self)"
-        label.numberOfLines = 0
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.lineBreakMode = .byWordWrapping
-        label.textAlignment = .center
-        return label
-    }()
+    private let label: UILabel = .make(text: "Pick An Action")
 
-    private lazy var pushUIKitButton = {
-        var configuration = UIButton.Configuration.plain()
-        configuration.title = "Push UIKit ViewController"
-        return UIButton(
-            configuration: configuration,
-            primaryAction: .init { [weak self] _ in
-                self?.pushUIKitViewController()
-            }
+    private lazy var pushUIKitButton: UIButton = .make(
+        title: "Push UIKit ViewController"
+    ) { [weak self] in
+        self?.navigationController?.pushViewController(
+            ViewController(),
+            animated: true
         )
-    }()
+    }
 
-    private lazy var pushSwiftUIButton = {
-        var configuration = UIButton.Configuration.plain()
-        configuration.title = "Push SwiftUI ViewController"
-        return UIButton(
-            configuration: configuration,
-            primaryAction: .init { [weak self] _ in
-                self?.pushSwiftUIViewController()
-            }
+    private lazy var pushSwiftUIButton: UIButton = .make(
+        title: "Push SwiftUI ViewController"
+    ) { [weak self] in
+        self?.navigationController?.push(PushedView())
+    }
+
+    private lazy var presentSwiftUIButton: UIButton = .make(
+        title: "Present SwiftUI ViewController"
+    ) { [weak self] in
+        self?.navigationController?.present(
+            UINavigationController(PresentedView()),
+            animated: true
         )
-    }()
+    }
 
     // MARK: - View Controller Lifecycle
 
@@ -66,6 +52,7 @@ class RootViewController: UIViewController {
         vStackView.addArrangedSubview(label)
         vStackView.addArrangedSubview(pushUIKitButton)
         vStackView.addArrangedSubview(pushSwiftUIButton)
+        vStackView.addArrangedSubview(presentSwiftUIButton)
 
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -78,19 +65,5 @@ class RootViewController: UIViewController {
         ])
 
         vStackView.setCustomSpacing(20, after: label)
-        vStackView.setCustomSpacing(8, after: pushUIKitButton)
-    }
-
-    // MARK: - Actions
-
-    private func pushUIKitViewController() {
-        navigationController?.pushViewController(
-            ViewController(),
-            animated: true
-        )
-    }
-
-    private func pushSwiftUIViewController() {
-        navigationController?.push(ScreenView())
     }
 }
