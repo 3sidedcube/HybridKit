@@ -39,23 +39,3 @@ public extension UIViewController {
         return viewController
     }
 }
-
-// MARK: - UINavigationController
-
-public extension UINavigationController {
-
-    /// Push the given SwiftUI `contentView` on the navigation stack.
-    ///
-    /// - Parameters:
-    ///   - contentView: `ContentView` SwiftUI view
-    ///   - animated: `Bool` animated, defaults to `true`
-    func push<ContentView: View>(
-        _ contentView: ContentView,
-        animated: Bool = true
-    ) {
-        pushViewController(
-            .hosted(contentView, in: self),
-            animated: animated
-        )
-    }
-}
