@@ -10,6 +10,11 @@ import SwiftUI
 
 public extension HostedView {
 
+    /// Shorthand to get the `viewController` of the `hostingController`
+    var viewController: UIViewController? {
+        hostingController?.viewController
+    }
+
     /// Present the given `viewController`
     /// - Parameters:
     ///   - viewController: `UIViewController` to present
