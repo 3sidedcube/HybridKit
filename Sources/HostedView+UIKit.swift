@@ -23,16 +23,13 @@ public extension HostedView {
         _ viewController: UIViewController,
         animated: Bool = true
     ) {
-        hostingController?.viewController?.present(
-            viewController,
-            animated: animated
-        )
+        self.viewController?.present(viewController, animated: animated)
     }
 
     /// Dismiss the view controller
     /// - Parameter animated: `Bool` animated, defaults to `true`
     func dismiss(animated: Bool = true) {
-        hostingController?.viewController?.dismiss(animated: animated)
+        viewController?.dismiss(animated: animated)
     }
 
     /// Push the given SwiftUI `contentView` on the navigation stack
